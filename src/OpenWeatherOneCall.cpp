@@ -724,15 +724,15 @@ int OpenWeatherOneCall::createCurrent(int sizeCap)
                                 hour[h].snowVolume = 0;
 
 
-                            if(hourly_0["rain"])
+                            if(hourly_0["rain"]["1h"])
                                 {
                                     if(USER_PARAM.OPEN_WEATHER_UNITS == 2)
                                         {
-                                            float temp = hourly_0["rain"];
+                                            float temp = hourly_0["rain"]["1h"];
                                             hour[h].rainVolume = (temp/25.4); // 95
                                         }
                                     else
-                                        hour[h].rainVolume = hourly_0["rain"]; // 95
+                                        hour[h].rainVolume = hourly_0["rain"]["1h"]; // 95
 
                                 }
                             else
